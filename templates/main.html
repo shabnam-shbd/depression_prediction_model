@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href='../static/style.css'/>	
+</head>
+<div class="result" align="left">
+    {% if result %}
+        <h1> Result:</h1>
+		   <h3>{{ result }}</h3>
+		<br>
+    {% endif %}
+</div>
+<body>
+	<div>
+	   <h1>Predict depression using ambulatory care visit information</h1>
+		<form action="{{ url_for('main') }}" method="POST">
+			<fieldset>
+				<div>
+				<h2>Please input your the following information:</h2>
+				<br> Age
+				<select name = 'AGE'>
+						<option value="1">18-29 years old </option>
+						<option value="2">30-44 years old </option>
+						<option value="3">45-64 years old </option>
+						<option value="4">65 years or over </option>
+				</select>
+				<br> 
+				<br> Sex:
+				<select name="SEX">
+						<option value="1">Female </option>
+						<option value="0">Male </option>
+				</select>
+				<br>
+				<br> Race:
+				<select name="RACER">
+						<option value="White">White </option>
+						<option value="Black">Black </option>
+						<option value="Other">Other </option>
+				</select>
+				<br>
+				<br> Insurance:
+				<select name="PAYTYPER">
+						<option value="Private">Private </option>
+						<option value="Medicare">Medicare </option>
+						<option value="Medicaid">Medicaid </option>
+						<option value="Other">Other </option>
+				</select>
+				<br>
+				<h2>Please select information about your visit:</h2>
+				<br> Visit Day:
+				<select name="VDAYR">
+						<option value="Saturday">Saturday </option>
+						<option value="Sunday">Sunday </option>
+						<option value="Weekday">Weekday </option>
+				</select>
+				<br>
+				<br> Visit Season:
+				<select name="VMONTH">
+						<option value="Spring">Spring </option>
+						<option value="Summer">Summer </option>
+						<option value="Winter">Winter </option>
+						<option value="Fall">Fall </option>
+				</select>
+				<br>
+				<br> First visit:
+				<select name="SENBEFOR">
+						<option value="1">Yes </option>
+						<option value="0">No </option>
+				</select>
+				<br>
+				<br> Region:
+				<select name="REGIONOFF">
+						<option value="Midwest">Midwest </option>
+						<option value="Northeast">Northeast </option>
+						<option value="South">South </option>
+						<option value="West">West </option>
+				</select>
+				<br>
+				<br> Metropolitan Area:
+				<select name="MSA">
+						<option value="1">Yes </option>
+						<option value="0">No </option>
+				</select>
+				<br>
+				<h2>Please select in you are currently using any of these:</h2>
+				<br> Tobacco use:
+				<select name="USETOBAC">
+						<option value="Current">Current </option>
+						<option value="Not_current">Not current </option>
+				</select>
+				<br>
+				<br> Alcohol abuse, misuse or dependance:
+				<select name="ETOHAB">
+						<option value="1">Yes </option>
+						<option value="0">No </option>
+				</select>
+				<br>
+				<br> Substance abuse:
+				<select name="SUBSTAB">
+						<option value="1">Yes </option>
+						<option value="0">No </option>
+				</select>
+				<br>
+				<h2>Please select if you have any of these comorbidities:</h2>
+				<div class="checkboxes">
+					<label for="ADD"><input type="checkbox" name="ADD" value="on"/> <span>ADD</span></label>
+					<label for="ALZHD"><input type="checkbox" name="ALZHD" value="on"/> <span>ALZHD</span></label>
+					<label for="ARTHRTIS"><input type="checkbox" name="ARTHRTIS" value="on"/> <span>ARTHRTIS</span></label>
+					<label for="ASTHMA"><input type="checkbox" name="ASTHMA" value="on"/> <span>ASTHMA</span></label>
+					<label for="AUTISM"><input type="checkbox" name="AUTISM" value="on"/> <span>AUTISM</span></label>
+					<label for="CAD"><input type="checkbox" name="CAD" value="on"/> <span>CAD</span></label>
+					<label for="CANCER"><input type="checkbox" name="CANCER" value="on"/> <span>CANCER</span></label>
+					<label for="CEBVD"><input type="checkbox" name="CEBVD" value="on"/> <span>CEBVD</span></label>
+					<label for="CHF"><input type="checkbox" name="CHF" value="on"/> <span>CHF</span></label>				
+					<label for="CKD"><input type="checkbox" name="CKD" value="on"/> <span>CKD</span></label>
+					<label for="COPD"><input type="checkbox" name="COPD" value="on"/> <span>COPD</span></label>
+					<label for="DIABTYP2"><input type="checkbox" name="DIABTYP2" value="on"/> <span>DIABTYP2</span></label>				
+					<label for="ESRD"><input type="checkbox" name="ESRD" value="on"/> <span>ESRD</span></label>
+					<label for="HEPB"><input type="checkbox" name="HEPB" value="on"/> <span>HEPB</span></label>
+					<label for="HEPC"><input type="checkbox" name="HEPC" value="on"/> <span>HEPC</span></label>				
+					<label for="HIV"><input type="checkbox" name="HIV" value="on"/> <span>HIV</span></label>
+					<label for="HPE"><input type="checkbox" name="HPE" value="on"/> <span>HPE</span></label>
+					<label for="HTN"><input type="checkbox" name="HTN" value="on"/> <span>HTN</span></label>				
+					<label for="HYPLIPID"><input type="checkbox" name="HYPLIPID" value="on"/> <span>HYPLIPID</span></label>
+					<label for="OBESITY"><input type="checkbox" name="OBESITY" value="on"/> <span>OBESITY</span></label>
+					<label for="OSA"><input type="checkbox" name="OSA" value="on"/> <span>OSA</span></label>				
+					<label for="OSTPRSIS"><input type="checkbox" name="OSTPRSIS" value="on"/> <span>OSTPRSIS</span></label>
+				</div>
+				<br>
+				<input type="submit">
+			</div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
