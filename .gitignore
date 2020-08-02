@@ -1,0 +1,6 @@
+.vscode/
+__pycache__/
+new/
+model_test.py
+model.py
+preprocess.py
