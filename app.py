@@ -6,16 +6,12 @@ Created on Thu Jul 30 14:56:15 2020
 """
 
 import flask
-from flask import Flask
 
 import pickle
 import numpy as np
 import pandas as pd
 
-
-import pickle
-import numpy as np
-import pandas as pd
+import os
 
 def create_x_test(int_features, comorbidity_cols):
     from pandas.api.types import CategoricalDtype
@@ -116,6 +112,6 @@ def main():
 
 
 if __name__ == '__main__':
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(debug = True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
